@@ -24,6 +24,26 @@ putingg <- ggplot(putindat, aes(x = Date, y = Percent, color = Opinion)) +
        subtitle = "Data from Levada Center",
        caption = "Data can be found at: https://www.levada.ru/2020/10/01/odobrenie-institutov-vlasti-26/")
 
+putingg
+
 ggsave("putingg.png")
 ```
 
+```{r mishustinread}
+mishustindat <- read_xlsx("raw-data/mishustin.xlsx")
+```
+
+
+```{r}
+mishustingg <- ggplot(mishustindat, aes(x = Date, y = Percent, color = Opinion)) + 
+  geom_point() +
+  geom_line() +
+  expand_limits(y = c(0, 100)) +
+  labs(title = "2020 Monthly Domestic Approval of Prime Minister Mishustin",
+       subtitle = "Data from Levada Center",
+       caption = "Data can be found at: https://www.levada.ru/2020/10/01/odobrenie-institutov-vlasti-26/")
+
+mishustingg
+
+ggsave("mishustin.png")
+```
